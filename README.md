@@ -1,27 +1,62 @@
 # AsButton
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.3.
+The AsButton library exported as angular modules. Required angular version 2+.
 
-## Development server
+![alt text](https://github.com/Anilk1sagar/as-button/blob/master/src/assets/as-button.png)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Installation
 
-## Code scaffolding
+Using npm:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```shell
+$ npm i as-button --save
+```
 
-## Build
+## Example 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```javascript
+// app.module.ts
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
 
-## Running unit tests
+import { AsButtonModule } from 'as-button'; //<< Add this
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    AsButtonModule //<< Add this
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
 
-## Running end-to-end tests
+```html
+<!-- my-component.html -->
+<h3>Link Button</h3>
+<as-button 
+    link="https://thedroid.io"
+    value="Button With Link"
+    bgColor="#3F51B5"
+    color="#fff"
+    shadow="2"
+    fontSize="14px"
+    borderRadius="10"
+    padding="10,15"
+></as-button>
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+<h3>Simple Button</h3>
+<as-button 
+    value="Simple Button"
+    bgColor="#3F51B5"
+    color="#fff"
+    shadow="2"
+    fontSize="14px"
+    borderRadius="10"
+    padding="10,15"
+></as-button>
+```

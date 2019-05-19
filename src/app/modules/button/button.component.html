@@ -1,0 +1,8 @@
+<!-- <h1> -->
+	<!-- <ng-content></ng-content> -->
+	<!-- {{value}}
+</h1> -->
+
+<a href="{{ link }}" #linkbutton *ngIf="_mIsLinkButton">{{value}}</a>
+<button #button *ngIf="!_mIsLinkButton">{{value}}</button>
+
